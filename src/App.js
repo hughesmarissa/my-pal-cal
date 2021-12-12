@@ -1,4 +1,9 @@
+import { useState } from 'react';
+
 function App() {
+const [calc, setCalc] =  useState('');
+const [result, setResult] = useState('');
+
     // arrow function to create digits 1-9
     const createDigits = () => {
         const digits = [];
