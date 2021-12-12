@@ -2,7 +2,7 @@
 :root {
     --primary: #2EA393;
     --secondary: #F09873;
-    --dark: #A35C3E;
+    --dark: #5F706D;
     --light: #F1F1F1;
 }
 
@@ -50,15 +50,36 @@ body {
 button {
     appearance: none; /* no default styles*/
     border: none;
-    box-shadow: 0px 0px 45px 7px rgba(212,212,212,0.31) ;
+    /*box-shadow: 0px 0px 45px 7px rgba(212,212,212,0.31) ;*/
     color: white;
     font-size: 40px;
     padding: 15px;
-    margin: .5px;
+    /*margin: .4px;*/
     cursor: pointer;
     transition: 0.4s;
 }
 
 button:hover {
     opacity: 0.9;
+}
+
+.operators {
+    display: flex;
+}
+
+.operators button {
+    flex: 1 1 0%; /* makes buttons equal*/
+    background-color: var(--primary);
+    font-weight: 700;
+}
+
+.digits {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.digits button {
+    flex: 1 1 33.333%; /* stretches to fit */
+    max-width: 33.333%; /* to be sure buttons are fully stretched*/
+    background-color: var(--dark);
 }
