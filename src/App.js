@@ -15,6 +15,12 @@ function App() {
             return;
         }
         setCalc(calc + value);
+
+
+        //for results, needs to be a string
+        if (!ops.includes(value)) {
+            setResult(eval(calc + value).toString());
+        }
     }
 
     // arrow function to create digits 1-9
@@ -38,8 +44,9 @@ function App() {
 		<div className="App">
             <div className="calculator">
                 <div className="display">
-                    {result ? <span>(0)</span>  : ''} 
                     { calc || "0"}
+                    <div></div>
+                    {result ? <span>({result})</span>  : ''}
                 </div>
                 <div className="operators">
                     <button onClick={() => updateCalc('/')}>/</button>
