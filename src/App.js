@@ -7,6 +7,13 @@ function App() {
     const ops = ['/', '*', '+', '-', '.'];
 
     const updateCalc = (value) => {
+        if (
+            ops.includes(value) && calc === ''|| /* if the last value is an operator and equals 0 OR */
+            ops.includes(value) && ops.includes(calc.slice(-1) /* ...and last value was also an operator*/
+            )
+        ) {
+            return;
+        }
         setCalc(calc + value);
     }
 
